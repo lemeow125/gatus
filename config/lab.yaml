@@ -1,7 +1,7 @@
 # Presets
 lab-preset: &lab-preset
   group: Core Services
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:
@@ -11,7 +11,7 @@ lab-preset: &lab-preset
 
 lab-preset-silent: &lab-preset-silent
   group: Core Services
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:

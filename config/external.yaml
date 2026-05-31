@@ -1,7 +1,7 @@
 # Presets
 external-preset: &external-preset
   group: External
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:
@@ -11,7 +11,7 @@ external-preset: &external-preset
 
 external-preset-silent: &external-preset-silent
   group: External
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:

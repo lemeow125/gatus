@@ -1,6 +1,6 @@
 dns-preset: &dns-preset
   group: DNS - External
-  interval: 10s
+  interval: 30s
   conditions:
     - "[CONNECTED] == true"
     - "[RESPONSE_TIME] < 200"

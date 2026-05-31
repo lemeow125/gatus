@@ -5,7 +5,7 @@ alerting:
   ntfy:
       url: https://ntfy.06222001.xyz
       topic: ${NTFY_TOPIC}
-      priority: 1
+      priority: 5
       <<: *alert-preset
       overrides:
         # Not yet implemented

@@ -1,7 +1,7 @@
 # Presets
 service_queue_preset: &service_queue_preset
   group: Service Queue
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:
@@ -11,7 +11,7 @@ service_queue_preset: &service_queue_preset
 
 service_queue_preset-silent: &service_queue_preset-silent
   group: Service Queue
-  interval: 10s
+  interval: 30s
   conditions:
     - "[STATUS] == 200"
   alerts:
