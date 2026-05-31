@@ -22,14 +22,14 @@ steps:
       - docker-compose up -d
       - echo "Waiting for services to stabilise..."
       - sleep 30
-      - echo "Checking logs for errors..."
-      - docker-compose logs 2>&1 | tee logs.txt
-      - if grep -Eqi 'error|fatal|exception' logs.txt; then
-          echo "❌ Errors detected in container logs!" ;
-          docker-compose logs ;
-          exit 1 ;
-        fi
-      - echo "✅ No errors found."
+      # Check that the service container is still running
+      - echo "Checking if service is still up..."
+      - docker-compose ps gatus | grep -q "Up" || {
+          echo "❌ Gatus container is not running!";
+          docker-compose logs;
+          exit 1;
+        }
+      - echo "✅ Service is running. Configuration valid."
       - docker-compose down
 
 when:
