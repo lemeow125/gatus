@@ -9,7 +9,7 @@ services:
 
 steps:
   - name: test-compose
-    image: docker/compose:latest
+    image: docker/compose:2.24.6
     environment:
       DOCKER_HOST: tcp://docker:2375
       PORT: "9100"                  
