@@ -1,7 +1,7 @@
 # Presets
 iot-preset: &iot-preset
   group: IoT
-  interval: 30s
+  interval: 3m
   conditions:
     - "[CONNECTED] == true"
   alerts:

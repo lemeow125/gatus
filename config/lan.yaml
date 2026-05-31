@@ -1,7 +1,7 @@
 # Presets
 lan-preset: &lan-preset
   group: LAN
-  interval: 30s
+  interval: 3m
   conditions:
     - "[CONNECTED] == true"
   alerts:
@@ -11,7 +11,7 @@ lan-preset: &lan-preset
 
 lan-preset-silent: &lan-preset-silent
   group: LAN
-  interval: 30s
+  interval: 3m
   conditions:
     - "[CONNECTED] == true"
   alerts:
