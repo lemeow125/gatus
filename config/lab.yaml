@@ -98,11 +98,7 @@ endpoints:
   - name: Go API
     url: "https://goapi.06222001.xyz"
     <<: *lab-preset
-
-  - name: Filebrowser
-    url: "https://filebrowser.06222001.xyz"
-    <<: *lab-preset
-
+    
   - name: Auxsol Cloud Fast API
     url: "http://10.0.10.4:9001"
     <<: *lab-preset
