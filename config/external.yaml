@@ -1,7 +1,7 @@
 # Presets
 external-preset: &external-preset
   group: External
-  interval: 1m
+  interval: 10s
   conditions:
     - "[STATUS] == 200"
     - "[RESPONSE_TIME] < 1000"
@@ -11,7 +11,7 @@ external-preset: &external-preset
 
 external-preset-silent: &external-preset-silent
   group: External
-  interval: 1m
+  interval: 10s
   conditions:
     - "[STATUS] == 200"
     - "[RESPONSE_TIME] < 1000"
