@@ -1,8 +1,5 @@
 alert-preset: &alert-preset
-  description: "Service down"
   send-on-resolved: true
-  failure-threshold: 6
-  success-threshold: 6
 
 alerting:
   ntfy:
