@@ -1,0 +1,31 @@
+skip_clone: false
+
+services:
+  docker:
+    image: docker:dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""
+
+steps:
+  - name: test-compose
+    image: docker/compose:latest
+    environment:
+      DOCKER_HOST: tcp://docker:2375
+      PORT: "9100"                  
+    commands:
+      - docker-compose up -d
+      - echo "Waiting for services to stabilise..."
+      - sleep 30
+      - echo "Checking logs for errors..."
+      - docker-compose logs 2>&1 | tee logs.txt
+      - if grep -Eqi 'error|fatal|exception' logs.txt; then
+          echo "❌ Errors detected in container logs!" ;
+          docker-compose logs ;
+          exit 1 ;
+        fi
+      - echo "✅ No errors found."
+      - docker-compose down
+
+when:
+  event: [push, manual]
