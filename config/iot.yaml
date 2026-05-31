@@ -62,13 +62,13 @@ endpoints:
   # Lights
   - name: SBULB-2
     url: "icmp://10.0.10.203"
-    <<: *iot-preset
+    <<: *iot-preset-silent
   - name: SSTRIP-1
     url: "icmp://10.0.10.168"
     <<: *iot-preset
   - name: SSTRIP-2
     url: "icmp://10.0.10.223"
-    <<: *iot-preset
+    <<: *iot-preset-silent
 
   # Others
   - name: INVERTER-1
