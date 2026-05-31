@@ -1,0 +1,79 @@
+# Presets
+iot-preset: &iot-preset
+  group: IoT
+  interval: 1m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: ntfy
+    - type: discord
+    - type: email
+
+endpoints:
+  # CCTVs
+  - name: CCTV-1
+    url: "icmp://10.0.10.249"
+    <<: *iot-preset
+  - name: CCTV-2
+    url: "icmp://10.0.10.139"
+    <<: *iot-preset
+
+  - name: CCTV-3
+    url: "icmp://10.0.10.243"
+    <<: *iot-preset
+
+  - name: CCTV-4
+    url: "icmp://10.0.10.143"
+    <<: *iot-preset
+
+  - name: CCTV-5
+    url: "icmp://10.0.10.166"
+    <<: *iot-preset
+
+  # Smart Plugs
+  - name: SPLUG-1
+    url: "icmp://10.0.10.6"
+    <<: *iot-preset
+
+  - name: SPLUG-2
+    url: "icmp://10.0.10.9"
+    <<: *iot-preset
+
+  - name: SPLUG-3
+    url: "icmp://10.0.10.10"
+    <<: *iot-preset
+
+  - name: SPLUG-4
+    url: "icmp://10.0.10.11"
+    <<: *iot-preset
+
+  - name: SPLUG-5
+    url: "icmp://10.0.10.12"
+    <<: *iot-preset
+
+  - name: SPLUG-6
+    url: "icmp://10.0.10.129"
+    <<: *iot-preset
+
+  - name: SPLUG-7
+    url: "icmp://10.0.10.171"
+    <<: *iot-preset
+
+  # Lights
+  - name: SBULB-2
+    url: "icmp://10.0.10.203"
+    <<: *iot-preset
+  - name: SSTRIP-1
+    url: "icmp://10.0.10.168"
+    <<: *iot-preset
+  - name: SSTRIP-2
+    url: "icmp://10.0.10.223"
+    <<: *iot-preset
+
+  # Others
+  - name: INVERTER-1
+    url: "icmp://10.0.10.187"
+    <<: *iot-preset
+  - name: SBREAKER-1
+    url: "icmp://10.0.10.244"
+    <<: *iot-preset

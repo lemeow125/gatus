@@ -1,0 +1,66 @@
+# Presets
+external-preset: &external-preset
+  group: External
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+    - "[RESPONSE_TIME] < 1000"
+  alerts:
+    - type: ntfy
+    - type: discord
+
+external-preset-silent: &external-preset-silent
+  group: External
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+    - "[RESPONSE_TIME] < 1000"
+  alerts:
+    - type: discord
+
+endpoints:
+  - name: Facebook
+    url: "https://facebook.com"
+    <<: *external-preset
+
+  - name: GitHub
+    url: "https://github.com"
+    <<: *external-preset
+
+  - name: Youtube
+    url: "https://youtube.com"
+    <<: *external-preset
+
+  - name: Google
+    url: "https://google.com"
+    <<: *external-preset
+
+  - name: Auxsol Cloud
+    url: "https://eu.auxsolcloud.com"
+    <<: *external-preset
+  
+  # Silent
+  - name: Stack Overflow
+    url: "https://stackoverflow.com"
+    <<: *external-preset-silent
+
+  # USTP
+  - name: USTP Official Site
+    url: "https://ustp.edu.ph"
+    <<: *external-preset-silent
+
+  - name: USTP Journal
+    url: "https://mjst.ustp.edu.ph"
+    <<: *external-preset-silent
+
+  - name: USTP HIMS
+    url: "https://hims.ustp.edu.ph"
+    <<: *external-preset-silent
+
+  - name: USTP USTeP
+    url: "https://ustep.ustp.edu.ph"
+    <<: *external-preset-silent
+
+  - name: USTP PRISMS
+    url: "https://prisms.ustp.edu.ph"
+    <<: *external-preset-silent

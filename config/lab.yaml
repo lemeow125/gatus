@@ -1,0 +1,120 @@
+# Presets
+lab-preset: &lab-preset
+  group: Core Services
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+  alerts:
+    - type: ntfy
+    - type: discord
+    - type: email
+
+lab-preset-silent: &lab-preset-silent
+  group: Core Services
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+  alerts:
+    - type: discord
+
+
+endpoints:
+  - name: Main Domain
+    url: "https://06222001.xyz"
+    <<: *lab-preset
+
+  - name: NextCloud
+    url: "https://nextcloud.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Gatus
+    url: "https://stats.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Forgejo
+    url: "https://git.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Woodpecker
+    url: "https://woodpecker.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Blog
+    url: "https://blog.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Authentik
+    url: "https://sso.06222001.xyz"
+    <<: *lab-preset
+
+  - name: DRF-Template API
+    url: "https://api.template.06222001.xyz/api/v1/swagger"
+    <<: *lab-preset
+
+  - name: Vaultwarden
+    url: "https://vaultwarden.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Firefly
+    url: "https://firefly.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Open WebUI
+    url: "https://openwebui.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Frigate NVR
+    url: "https://frigate.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Seedbox
+    url: "http://10.0.10.169:8088"
+    <<: *lab-preset
+
+  - name: Coolify
+    url: "https://coolify.06222001.xyz"
+    <<: *lab-preset
+
+  - name: PGAdmin
+    url: "https://pgadmin.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Semaphore
+    url: "https://semaphore.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Home Assistant
+    url: "https://homeassistant.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Home Assistant - BT Node 1
+    url: "http://10.0.10.142:8001"
+    <<: *lab-preset
+
+  - name: Home Assistant - BT Node 2
+    url: "http://10.0.10.4:8013"
+    <<: *lab-preset
+
+  - name: Immich
+    url: "https://immich.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Go API
+    url: "https://goapi.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Filebrowser
+    url: "https://filebrowser.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Auxsol Cloud Fast API
+    url: "http://10.0.10.4:9001"
+    <<: *lab-preset
+
+  - name: Pihole
+    url: "http://10.0.10.4:8086"
+    <<: *lab-preset
+
+  - name: Stable Diffusion
+    url: "https://sd.06222001.xyz"
+    <<: *lab-preset

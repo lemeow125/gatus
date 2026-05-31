@@ -1,0 +1,65 @@
+service-queue-preset: &service-queue-preset
+  from: "dummydeedumdum@gmail.com"
+  username: ${SMTP_USERNAME_SERVICE_QUEUE}
+  password: ${SMTP_PASSWORD_SERVICE_QUEUE}
+  host: "smtp.gmail.com"
+  port: 465
+
+alerting:
+  ntfy:
+      url: https://ntfy.06222001.xyz
+      topic: ${NTFY_TOPIC}
+      priority: 1
+      default-alert:
+        failure-threshold: 3
+        send-on-resolved: true
+      overrides:
+        # Not yet implemented
+        # - group: "Service Queue"
+          # topic: ${NTFY_TOPIC_SERVICE_QUEUE}
+  discord:
+      webhook-url: ${DISCORD_WEBHOOK_URL}
+      # Not yet implemented
+      # overrides:
+        # - group: "Service Queue"
+          # webhook-url: ${DISCORD_WEBHOOK_URL_SERVICE_QUEUE}
+  email:
+      from: "kuma@ses.aws.06222001.xyz" # Unverified, will only send to personal mailbox
+      username: ${SMTP_USERNAME}
+      password: ${SMTP_PASSWORD}
+      host: "email-smtp.ap-southeast-2.amazonaws.com"
+      port: 465
+      to: "noehbernasol0@gmail.com"
+      client:
+        insecure: false
+      overrides:
+        - group: "Service Queue"
+          <<: *service-queue-preset
+
+        - group: "service_queue_gackkons"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
+
+        - group: "service_queue_okenwald"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
+
+        - group: "service_queue_claudio"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,claudio.daruca@ustp.edu.ph"
+
+        - group: "service_queue_tajms"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
+
+        - group: "service_queue_mickeymouse"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,renzo2kpro@gmail.com"
+
+        - group: "service_queue_ece"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,delapenaprincekurtlaurence@gmail.com,paknotaztig@gmail.com"
+
+        - group: "service_queue_bcbp"
+          <<: *service-queue-preset
+          to: "noehbernasol0@gmail.com,kenn.nacario12@gmail.com"

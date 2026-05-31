@@ -1,0 +1,65 @@
+# Presets
+lan-preset: &lan-preset
+  group: LAN
+  interval: 1m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: ntfy
+    - type: discord
+    - type: email
+
+lan-preset-silent: &lan-preset-silent
+  group: LAN
+  interval: 1m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: discord
+
+
+endpoints:
+  - name: LeRouter-1
+    url: "icmp://10.0.10.1"
+    <<: *lan-preset
+
+  - name: LeRouter-2
+    url: "icmp://10.0.10.2"
+    <<: *lan-preset
+
+  - name: LeRouter-3
+    url: "icmp://10.0.10.3"
+    <<: *lan-preset
+
+  - name: Pi5-1
+    url: "icmp://10.0.10.4"
+    <<: *lan-preset
+
+  - name: PC-2
+    url: "icmp://10.0.10.115"
+    <<: *lan-preset
+
+  - name: PC-3
+    url: "icmp://10.0.10.169"
+    <<: *lan-preset
+
+  - name: ONU
+    url: "icmp://10.0.30.1"
+    <<: *lan-preset
+
+  # No alerts
+  - name: PC-1
+    url: "icmp://10.0.10.8"
+    <<: *lan-preset-silent
+
+  - name: Phone-1
+    url: "icmp://10.0.10.32"
+    <<: *lan-preset-silent
+
+  - name: Phone-2
+    url: "icmp://10.0.10.31"
+    <<: *lan-preset-silent
+
+  - name: Phone-3
+    url: "icmp://10.0.10.33"
+    <<: *lan-preset-silent

@@ -1,0 +1,49 @@
+# Presets
+syncthing-preset: &syncthing-preset
+  group: Syncthing
+  interval: 1m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: ntfy
+    - type: discord
+    - type: email
+
+syncthing-preset-silent: &syncthing-preset-silent
+  group: Syncthing
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+  alerts:
+    - type: ntfy
+    - type: discord
+
+endpoints:
+  - name: Pi5-1
+    url: "http://10.0.10.4:8384"
+    <<: *syncthing-preset
+
+  - name: PC-2
+    url: "http://10.0.10.115:8384"
+    <<: *syncthing-preset
+
+  - name: PC-3
+    url: "http://10.0.10.169:8384"
+    <<: *syncthing-preset
+
+  # No alerts
+  - name: PC-1
+    url: "http://10.0.10.8:8384"
+    <<: *syncthing-preset-silent
+
+  - name: Phone-1
+    url: "http://10.0.10.32:8384"
+    <<: *syncthing-preset-silent
+
+  - name: Phone-2
+    url: "http://10.0.10.31:8384"
+    <<: *syncthing-preset-silent
+
+  - name: Phone-3
+    url: "http://10.0.10.33:8384"
+    <<: *syncthing-preset-silent

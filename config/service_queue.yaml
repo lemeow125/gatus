@@ -1,0 +1,103 @@
+# Presets
+service_queue_preset: &service_queue_preset
+  group: Service Queue
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+  alerts:
+    - type: ntfy
+    - type: discord
+    - type: email
+
+service_queue_preset-silent: &service_queue_preset-silent
+  group: Service Queue
+  interval: 1m
+  conditions:
+    - "[STATUS] == 200"
+  alerts:
+    - type: discord
+
+
+endpoints:
+  - name: Gackkons API
+    url: "https://api.gackkons.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
+
+  - name: Gackkons App
+    url: "https://app.gackkons.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
+
+  - name: Minecraft Server - JR
+    url: "tcp://jr.06222001.xyz:48067"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,olaivar.jamespatrick@gmail.com"
+
+  - name: Minecraft Server - Okenwald
+    url: "tcp://jr.06222001.xyz:39702"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
+
+  - name: Nominatim API
+    url: "https://nominatim.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,claudio.daruca@ustp.edu.ph"
+
+  - name: OSRM API
+    url: "https://osrm.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,claudio.daruca@ustp.edu.ph"
+
+  - name: TAJMS App
+    url: "https://tajms.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
+
+  - name: Minecraft Server - MickeyMouse
+    url: "tcp://jr.06222001.xyz:22913"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,renzo2kpro@gmail.com"
+
+  - name: ECE Monitoring System
+    url: "https://ecemonitoringsystem.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,delapenaprincekurtlaurence@gmail.com,paknotaztig@gmail.com"
+
+  - name: BCBP API (Dev)
+    url: "https://api.dev.bcbp.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,kenn.nacario12@gmail.com"
+
+  - name: BCBP API (Prod)
+    url: "https://api.bcbp.06222001.xyz"
+    <<: *service_queue_preset
+    alerts:
+      - type: email
+        to: "noehbernasol0@gmail.com,kenn.nacario12@gmail.com"
