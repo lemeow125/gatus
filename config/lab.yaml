@@ -71,10 +71,6 @@ endpoints:
     url: "http://10.0.10.169:8088"
     <<: *lab-preset
 
-  - name: Coolify
-    url: "https://coolify.06222001.xyz"
-    <<: *lab-preset
-
   - name: PGAdmin
     url: "https://pgadmin.06222001.xyz"
     <<: *lab-preset
