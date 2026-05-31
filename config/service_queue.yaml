@@ -43,7 +43,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,olaivar.jamespatrick@gmail.com"
 
   - name: Minecraft Server - Okenwald
-    url: "tcp://jr.06222001.xyz:39702"
+    url: "tcp://okenwald.06222001.xyz:39702"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
@@ -57,6 +57,8 @@ endpoints:
     alerts:
       - type: email
         to: "noehbernasol0@gmail.com,claudio.daruca@ustp.edu.ph"
+    conditions:
+      - "[STATUS] == 404"
 
   - name: OSRM API
     url: "https://osrm.06222001.xyz"
@@ -64,6 +66,8 @@ endpoints:
     alerts:
       - type: email
         to: "noehbernasol0@gmail.com,claudio.daruca@ustp.edu.ph"
+    conditions:
+      - "[STATUS] == 400"
 
   - name: TAJMS App
     url: "https://tajms.06222001.xyz"
@@ -73,7 +77,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
 
   - name: Minecraft Server - MickeyMouse
-    url: "tcp://jr.06222001.xyz:22913"
+    url: "tcp://06222001.xyz:22913"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
