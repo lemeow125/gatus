@@ -15,7 +15,6 @@ syncthing-preset-silent: &syncthing-preset-silent
   conditions:
     - "[CONNECTED] == true"
   alerts:
-    - type: ntfy
     - type: discord
 
 endpoints:
