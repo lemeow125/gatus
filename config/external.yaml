@@ -7,6 +7,7 @@ external-preset: &external-preset
   alerts:
     - type: ntfy
     - type: discord
+    - type: email
 
 external-preset-silent: &external-preset-silent
   group: External
