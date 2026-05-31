@@ -1,17 +1,22 @@
+alert-preset: &alert-preset
+  description: "Service down"
+  send-on-resolved: true
+  failure-threshold: 6
+  success-threshold: 6
+
 alerting:
   ntfy:
       url: https://ntfy.06222001.xyz
       topic: ${NTFY_TOPIC}
       priority: 1
-      default-alert:
-        failure-threshold: 3
-        send-on-resolved: true
+      <<: *alert-preset
       overrides:
         # Not yet implemented
         # - group: "Service Queue"
           # topic: ${NTFY_TOPIC_SERVICE_QUEUE}
   discord:
       webhook-url: ${DISCORD_WEBHOOK_URL}
+      <<: *alert-preset
       # Not yet implemented
       # overrides:
         # - group: "Service Queue"
@@ -23,12 +28,11 @@ alerting:
       host: "email-smtp.ap-southeast-2.amazonaws.com"
       port: 465
       to: "noehbernasol0@gmail.com"
-      client:
-        insecure: false
+      <<: *alert-preset
       overrides:
         - group: "Service Queue"
           from: "dummydeedumdum@gmail.com"
           username: ${SMTP_USERNAME_SERVICE_QUEUE}
           password: ${SMTP_PASSWORD_SERVICE_QUEUE}
           host: "smtp.gmail.com"
-          port: 465
+          port: 587

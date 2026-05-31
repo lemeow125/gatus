@@ -112,8 +112,13 @@ endpoints:
     <<: *lab-preset
 
   - name: Pihole
-    url: "http://10.0.10.4:8086"
+    url: "10.0.10.4"
     <<: *lab-preset
+    dns:
+      query-name: "example.com"
+      query-type: "A"
+    conditions:
+      - "[DNS_RCODE] == NOERROR"
 
   - name: Stable Diffusion
     url: "https://sd.06222001.xyz"

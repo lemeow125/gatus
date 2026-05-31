@@ -13,7 +13,7 @@ syncthing-preset-silent: &syncthing-preset-silent
   group: Syncthing
   interval: 10s
   conditions:
-    - "[STATUS] == 200"
+    - "[CONNECTED] == true"
   alerts:
     - type: ntfy
     - type: discord

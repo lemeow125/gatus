@@ -4,7 +4,6 @@ external-preset: &external-preset
   interval: 10s
   conditions:
     - "[STATUS] == 200"
-    - "[RESPONSE_TIME] < 700"
   alerts:
     - type: ntfy
     - type: discord
@@ -14,7 +13,6 @@ external-preset-silent: &external-preset-silent
   interval: 10s
   conditions:
     - "[STATUS] == 200"
-    - "[RESPONSE_TIME] < 700"
   alerts:
     - type: discord
 
