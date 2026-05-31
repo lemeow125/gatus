@@ -14,6 +14,7 @@ steps:
       DOCKER_HOST: tcp://docker:2375
       PORT: "9100"                  
     commands:
+      - echo "PORT=${PORT}" >> .env
       - docker-compose up -d
       - echo "Waiting for services to stabilise..."
       - sleep 30
