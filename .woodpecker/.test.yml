@@ -15,6 +15,10 @@ steps:
       PORT: "9100"                  
     commands:
       - echo "PORT=${PORT}" >> .env
+      - echo "Waiting for Docker daemon..."
+      - until docker info >/dev/null 2>&1; do sleep 1; done
+      - echo "Daemon ready."
+      - echo "PORT=${PORT}" > .env
       - docker-compose up -d
       - echo "Waiting for services to stabilise..."
       - sleep 30
