@@ -3,7 +3,7 @@ services:
     restart: unless-stopped
     image: twinproduction/gatus:v5.36.0
     ports:
-      - "8014:8080"
+      - "${PORT}:8080"
     volumes:
       - ./config:/config
     environment:
