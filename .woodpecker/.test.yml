@@ -21,7 +21,7 @@ steps:
       - echo "PORT=${PORT}" > .env
       - docker compose up -d
       - echo "Waiting for services to stabilise..."
-      - sleep 30
+      - sleep 15
       # Check that the service container is still running
       - echo "Checking if service is still up..."
       - docker compose ps gatus | grep -q "Up" || {
