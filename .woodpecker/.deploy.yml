@@ -9,6 +9,10 @@ steps:
         from_secret: SSH_HOST
       PROJECT_DIRECTORY:
         from_secret: PROJECT_DIRECTORY
+      SSH_HOST_2:
+        from_secret: SSH_HOST_2
+      PROJECT_DIRECTORY_2:
+        from_secret: PROJECT_DIRECTORY_2
       SSH_KEY:
         from_secret: SSH_KEY
     commands:
@@ -21,6 +25,15 @@ steps:
         cd "$PROJECT_DIRECTORY";
         docker compose down;
         git restore . && git pull origin "$CI_COMMIT_BRANCH" --force --rebase;
+        docker compose up -d;
+        docker image prune -af;
+        sleep 60;
+        docker compose logs;"
+      - ssh "$SSH_HOST_2" "
+        cd "$PROJECT_DIRECTORY_2";
+        docker compose down;
+        git restore . && git pull origin "$CI_COMMIT_BRANCH" --force --rebase;
+        rm -rfv config/remote.yaml;
         docker compose up -d;
         docker image prune -af;
         sleep 60;
