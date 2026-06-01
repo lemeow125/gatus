@@ -9,6 +9,14 @@ iot-preset: &iot-preset
     - type: discord
     - type: email
 
+iot-preset-silent: &iot-preset-silent
+  group: IoT
+  interval: 3m
+  conditions:
+    - "[CONNECTED] == true"
+  alerts:
+    - type: discord
+
 endpoints:
   # CCTVs
   - name: CCTV-1
