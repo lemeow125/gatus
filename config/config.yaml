@@ -2,3 +2,7 @@ ui:
   default-sort-by: group
 
 concurrency: 0
+
+storage:
+  maximum-number-of-results: 1000
+  maximum-number-of-events: 500
