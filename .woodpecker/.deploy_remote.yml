@@ -19,13 +19,13 @@ steps:
       - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > /root/.ssh/config
       - ssh "$SSH_HOST" "
         cd "$PROJECT_DIRECTORY";
-        docker-compose down;
+        docker compose down;
         git restore . && git pull origin "$CI_COMMIT_BRANCH" --force --rebase;
         rm -rfv config/remote.yaml;
-        docker-compose up -d;
+        docker compose up -d;
         docker image prune -af;
         sleep 60;
-        docker-compose logs;"
+        docker compose logs;"
   - name: discord
     image: appleboy/drone-discord
     settings:
