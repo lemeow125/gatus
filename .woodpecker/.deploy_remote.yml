@@ -22,6 +22,7 @@ steps:
         docker compose down;
         git restore . && git pull origin "$CI_COMMIT_BRANCH" --force --rebase;
         rm -rfv config/remote.yaml;
+        find config -type f -name '*.yaml' -exec sh -c 'sed -i.bak -E \"s/^([[:space:]]*group:[[:space:]]*)(.*)$/\1Remote - \2/\" \"\$1\" && rm -f \"\$1.bak\"' _ {} \\;
         docker compose up -d;
         docker image prune -af;
         sleep 60;
