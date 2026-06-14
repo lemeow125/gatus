@@ -1,5 +1,6 @@
 alert-preset: &alert-preset
   send-on-resolved: true
+  failure-threshold: 10
 
 alerting:
   ntfy:
