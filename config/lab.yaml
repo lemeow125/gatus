@@ -96,7 +96,7 @@ endpoints:
     <<: *lab-preset
     
   - name: Auxsol Cloud Fast API
-    url: "http://10.0.10.4:9001"
+    url: "http://10.0.10.115:9001"
     <<: *lab-preset
 
   - name: Pihole - PC-2
