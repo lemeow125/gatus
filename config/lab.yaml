@@ -51,16 +51,16 @@ endpoints:
     url: "https://api.template.06222001.xyz/api/v1/swagger"
     <<: *lab-preset
 
+  - name: Traccar
+    url: "https://traccar.06222001.xyz"
+    <<: *lab-preset
+
   - name: Vaultwarden
     url: "https://vaultwarden.06222001.xyz"
     <<: *lab-preset
 
   - name: Firefly
     url: "https://firefly.06222001.xyz"
-    <<: *lab-preset
-
-  - name: Open WebUI
-    url: "https://openwebui.06222001.xyz"
     <<: *lab-preset
 
   - name: Frigate NVR
@@ -73,10 +73,6 @@ endpoints:
 
   - name: PGAdmin
     url: "https://pgadmin.06222001.xyz"
-    <<: *lab-preset
-
-  - name: Semaphore
-    url: "https://semaphore.06222001.xyz"
     <<: *lab-preset
 
   - name: Home Assistant
@@ -103,8 +99,8 @@ endpoints:
     url: "http://10.0.10.4:9001"
     <<: *lab-preset
 
-  - name: Pihole
-    url: "10.0.10.4"
+  - name: Pihole - PC-2
+    url: "10.0.10.115"
     <<: *lab-preset
     dns:
       query-name: "example.com"
@@ -112,6 +108,11 @@ endpoints:
     conditions:
       - "[DNS_RCODE] == NOERROR"
 
-  - name: Stable Diffusion
-    url: "https://sd.06222001.xyz"
+  - name: Pihole - PC-3
+    url: "10.0.10.169"
     <<: *lab-preset
+    dns:
+      query-name: "example.com"
+      query-type: "A"
+    conditions:
+      - "[DNS_RCODE] == NOERROR"
