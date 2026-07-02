@@ -84,7 +84,7 @@ endpoints:
     <<: *lab-preset
 
   - name: Home Assistant - BT Node 2
-    url: "http://10.0.10.4:8013"
+    url: "http://10.0.10.169:8003"
     <<: *lab-preset
 
   - name: Immich
