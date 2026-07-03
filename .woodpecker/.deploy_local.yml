@@ -5,17 +5,28 @@ steps:
   - name: deploy
     image: alpine:latest
     environment:
-      SSH_HOST:
-        from_secret: SSH_HOST
-      PROJECT_DIRECTORY:
-        from_secret: PROJECT_DIRECTORY
-      SSH_KEY:
-        from_secret: SSH_KEY
+      BW_CLIENTID:
+        from_secret: BW_CLIENT_ID
+      BW_CLIENTSECRET:
+        from_secret: BW_CLIENT_SECRET
+      BW_PASSWORD:
+        from_secret: BW_PASSWORD
+      SSH_HOST: root@10.0.10.115
+      PROJECT_DIRECTORY: /mnt/nvme/files/docker \projects/gatus
+      MISE_CACHE_DIR: /var/cache/mise
+      BW_SERVER: https://vaultwarden.06222001.xyz
     commands:
       - mkdir -p /var/cache/apk
       - ln -s /var/cache/apk /etc/apk/cache
-      - apk add openssh
+      - apk add openssh nodejs npm curl
+      - npm install -g @bitwarden/cli@2026.6.0 --cache /var/cache/npm --prefer-offline
+      - bw config server "$BW_SERVER"
+      - bw login --apikey
+      - export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
+      - curl https://mise.run | sh
+      - export PATH="$HOME/.local/bin:$PATH"
       - mkdir -p /root/.ssh/
+      - export SSH_KEY=$(mise exec fnox@1.28.0 -- fnox get SSH_KEY)
       - echo "$SSH_KEY" | tr -d '\r' > /root/.ssh/id_rsa
       - chmod 600 /root/.ssh/id_rsa
       - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > /root/.ssh/config
@@ -29,6 +40,8 @@ steps:
         docker compose logs;"
     volumes:
       - /var/cache/apk:/var/cache/apk
+      - /var/cache/npm:/var/cache/npm
+      - /var/cache/mise:/var/cache/mise
   - name: discord
     image: appleboy/drone-discord
     settings:
@@ -59,5 +72,3 @@ when:
 
 depends_on:
   - test
-
-skip_clone: true

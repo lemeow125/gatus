@@ -1,0 +1,5 @@
+[providers]
+bitwarden = { type = "bitwarden", organization_id = "aaf93842-3c17-4ee8-a2de-fbcb7bc8bfb1" }
+
+[secrets]
+SSH_KEY = { provider = "bitwarden", value = " Woodpecker SSH Key" }
