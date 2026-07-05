@@ -100,7 +100,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,kenn.nacario12@gmail.com"
 
   - name: BCBP API (Prod)
-    url: "https://api.bcbp.06222001.xyz"
+    url: "https://app.bcbp-members-portal.xyz"
     <<: *service_queue_preset
     alerts:
       - type: email
