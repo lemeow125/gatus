@@ -99,6 +99,18 @@ endpoints:
     url: "http://10.0.10.115:9001"
     <<: *lab-preset
 
+  - name: Fileserver
+    url: "http://fileserver.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Fileserver (Personal)
+    url: "http://files.06222001.xyz"
+    <<: *lab-preset
+
+  - name: Fileserver (Service Queue)
+    url: "http://service-queue-files.06222001.xyz"
+    <<: *lab-preset
+
   - name: Pihole - PC-2
     url: "10.0.10.115"
     <<: *lab-preset
