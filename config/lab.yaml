@@ -23,10 +23,6 @@ endpoints:
     url: "https://06222001.xyz"
     <<: *lab-preset
 
-  - name: NextCloud
-    url: "https://nextcloud.06222001.xyz"
-    <<: *lab-preset
-
   - name: Gatus
     url: "https://stats.06222001.xyz"
     <<: *lab-preset
