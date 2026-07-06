@@ -1,12 +1,3 @@
-skip_clone: false
-
-services:
-  docker:
-    image: docker:dind
-    privileged: true
-    environment:
-      DOCKER_TLS_CERTDIR: ""
-
 steps:
   - name: test-compose
     image: docker
@@ -34,3 +25,8 @@ steps:
 
 when:
   event: [push, manual]
+
+services:
+  docker:
+    image: docker:dind
+    privileged: true
