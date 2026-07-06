@@ -52,7 +52,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
 
   - name: Minecraft Server - DeceasedCraft
-    url: "tcp://okenwald.06222001.xyz:35761"
+    url: "tcp://06222001.xyz:35761"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
