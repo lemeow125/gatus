@@ -8,7 +8,7 @@ steps:
       SSH_KEY:
         from_secret: SSH_KEY
       SSH_HOST: root@five.06222001.xyz
-      PROJECT_DIRECTORY: /mnt/sda1/files/docker\ projects/auxoscloud_fastapi
+      PROJECT_DIRECTORY: /mnt/sda1/files/docker\ projects/gatus
     commands:
       - apk add openssh
       - mkdir -p /root/.ssh/
