@@ -30,3 +30,5 @@ services:
   docker:
     image: docker:dind
     privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""   # ← disables TLS, listens on :2375
