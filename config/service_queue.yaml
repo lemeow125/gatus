@@ -51,6 +51,12 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
 
+  - name: Minecraft Server - DeceasedCraft
+    url: "tcp://okenwald.06222001.xyz:35761"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: Nominatim API
     url: "https://nominatim.06222001.xyz"
     <<: *service_queue_preset
