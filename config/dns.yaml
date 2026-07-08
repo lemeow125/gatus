@@ -25,11 +25,3 @@ endpoints:
   - name: Google - 8.8.4.4
     url: "icmp://8.8.4.4"
     <<: *dns-preset
-
-  - name: Quad9 - 9.9.9.11
-    url: "icmp://9.9.9.11"
-    <<: *dns-preset
-
-  - name: Quad9 - 9.9.9.9
-    url: "icmp://9.9.9.9"
-    <<: *dns-preset
