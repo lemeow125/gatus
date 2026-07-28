@@ -63,6 +63,18 @@ endpoints:
     url: "icmp://10.0.10.171"
     <<: *iot-preset
 
+  - name: SPLUG-8
+    url: "icmp://10.0.10.189"
+    <<: *iot-preset
+
+  - name: SPLUG-9
+    url: "icmp://10.0.10.176"
+    <<: *iot-preset
+
+  - name: SPLUG-10
+    url: "icmp://10.0.10.186"
+    <<: *iot-preset
+
   # Lights
   - name: SBULB-2
     url: "icmp://10.0.10.203"
