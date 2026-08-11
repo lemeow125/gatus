@@ -107,8 +107,8 @@ endpoints:
     url: "http://service-queue-files.06222001.xyz"
     <<: *lab-preset
 
-  - name: Pihole - PC-2
-    url: "10.0.10.115"
+  - name: Pihole - PC-4
+    url: "10.0.10.222"
     <<: *lab-preset
     dns:
       query-name: "example.com"
