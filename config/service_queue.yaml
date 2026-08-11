@@ -33,15 +33,6 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
 
-  - name: Minecraft Server - JR
-    url: "tcp://jr.06222001.xyz:48067"
-    <<: *service_queue_preset
-    conditions:
-      - "[CONNECTED] == true"
-    alerts:
-      - type: email
-        to: "noehbernasol0@gmail.com,olaivar.jamespatrick@gmail.com"
-
   - name: Minecraft Server - Okenwald
     url: "tcp://okenwald.06222001.xyz:39702"
     <<: *service_queue_preset
@@ -52,7 +43,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
 
   - name: Minecraft Server - DeceasedCraft
-    url: "tcp://06222001.xyz:35761"
+    url: "udp://06222001.xyz:35761"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
