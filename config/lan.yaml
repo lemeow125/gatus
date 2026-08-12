@@ -43,6 +43,10 @@ endpoints:
     url: "icmp://10.0.10.169"
     <<: *lan-preset
 
+  - name: PC-4
+    url: "icmp://10.0.10.222"
+    <<: *lan-preset
+
   - name: ONU
     url: "icmp://10.0.30.1"
     <<: *lan-preset
