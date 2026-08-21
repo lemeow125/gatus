@@ -1,6 +1,6 @@
 services:
   gatus:
-    restart: no
+    restart: always
     image: twinproduction/gatus:v5.36.0
     ports:
       - "${PORT}:8080"
