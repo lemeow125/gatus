@@ -39,10 +39,6 @@ endpoints:
     url: "https://woodpecker.06222001.xyz"
     <<: *lab-preset
 
-  - name: Jellyfin
-    url: "https://media.06222001.xyz"
-    <<: *lab-preset
-
   - name: Blog
     url: "https://blog.06222001.xyz"
     <<: *lab-preset

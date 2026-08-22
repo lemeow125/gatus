@@ -74,7 +74,7 @@ endpoints:
         to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
 
   - name: Minecraft Server - MickeyMouse
-    url: "tcp://06222001.xyz:22913"
+    url: "udp://06222001.xyz:22913"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
