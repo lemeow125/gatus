@@ -4,7 +4,7 @@ alert-preset: &alert-preset
 
 alerting:
   ntfy:
-      url: https://ntfy.06222001.xyz
+      url: https://ntfy.sh
       topic: ${NTFY_TOPIC}
       priority: 5
       <<: *alert-preset
