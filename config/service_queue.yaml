@@ -82,6 +82,12 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,renzo2kpro@gmail.com"
 
+  - name: Minecraft Server - Nuedelz
+    url: "udp://06222001.xyz:47472"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: ECE Monitoring System
     url: "https://ecemonitoringsystem.06222001.xyz"
     <<: *service_queue_preset
