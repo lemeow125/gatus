@@ -82,14 +82,20 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,renzo2kpro@gmail.com"
 
-  - name: Minecraft Server - Nuedelz
+  - name: Nuedelz's Minecraft Server
     url: "udp://06222001.xyz:47472"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
 
-  - name: Minecraft Server - Joseph
+  - name: Joseph's Minecraft Server
     url: "udp://06222001.xyz:50824"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: John Rey's Minecraft Server
+    url: "udp://06222001.xyz:37291"
     <<: *service_queue_preset
     conditions:
       - "[CONNECTED] == true"
