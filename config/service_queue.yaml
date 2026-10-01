@@ -106,6 +106,12 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
+  - name: John Michael's Minecraft Server
+    url: "udp://06222001.xyz:50748"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: ECE Monitoring System
     url: "https://ecemonitoringsystem.06222001.xyz"
     <<: *service_queue_preset
