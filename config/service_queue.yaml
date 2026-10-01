@@ -112,6 +112,12 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
+  - name: Sean's Minecraft Server
+    url: "udp://06222001.xyz:32019"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: ECE Monitoring System
     url: "https://ecemonitoringsystem.06222001.xyz"
     <<: *service_queue_preset
