@@ -43,10 +43,6 @@ endpoints:
     url: "https://blog.06222001.xyz"
     <<: *lab-preset
 
-  - name: Authentik
-    url: "https://sso.06222001.xyz"
-    <<: *lab-preset
-
   - name: DRF-Template API
     url: "https://api.template.06222001.xyz/api/v1/swagger"
     <<: *lab-preset
@@ -77,10 +73,6 @@ endpoints:
 
   - name: Home Assistant
     url: "https://homeassistant.06222001.xyz"
-    <<: *lab-preset
-
-  - name: Home Assistant - BT Node
-    url: "http://10.0.10.142:8003"
     <<: *lab-preset
 
   - name: Immich
