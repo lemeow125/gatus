@@ -67,6 +67,10 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
 
+  - name: RONW API
+    url: "https://ronw.06222001.xyz"
+    <<: *service_queue_preset
+
   - name: Nuedelz's Minecraft Server
     url: "udp://06222001.xyz:47472"
     <<: *service_queue_preset
