@@ -68,13 +68,6 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
-  - name: ECE Monitoring System
-    url: "https://ecemonitoringsystem.06222001.xyz"
-    <<: *service_queue_preset
-    alerts:
-      - type: email
-        to: "noehbernasol0@gmail.com,delapenaprincekurtlaurence@gmail.com,paknotaztig@gmail.com"
-
   - name: BCBP API (Dev)
     url: "https://api.dev.bcbp.06222001.xyz"
     <<: *service_queue_preset
