@@ -19,20 +19,6 @@ service_queue_preset-silent: &service_queue_preset-silent
 
 
 endpoints:
-  - name: Gackkons API
-    url: "https://api.gackkons.06222001.xyz"
-    <<: *service_queue_preset
-    alerts:
-      - type: email
-        to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
-
-  - name: Gackkons App
-    url: "https://app.gackkons.06222001.xyz"
-    <<: *service_queue_preset
-    alerts:
-      - type: email
-        to: "noehbernasol0@gmail.com,jiggerandreigobenza2@gmail.com,margiebalansagfabores@gmail.com"
-
   - name: Minecraft Server - Okenwald
     url: "tcp://okenwald.06222001.xyz:39702"
     <<: *service_queue_preset
@@ -41,13 +27,6 @@ endpoints:
     alerts:
       - type: email
         to: "noehbernasol0@gmail.com,roitzy.chcdo@gmail.com,edkarmelpiscos9317@gmail.com"
-
-  - name: TAJMS App
-    url: "https://tajms.06222001.xyz"
-    <<: *service_queue_preset
-    alerts:
-      - type: email
-        to: "noehbernasol0@gmail.com,galario.rainheart16@gmail.com"
 
   - name: RONW API
     url: "https://ronw.06222001.xyz"
