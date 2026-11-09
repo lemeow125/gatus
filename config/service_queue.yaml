@@ -75,6 +75,10 @@ endpoints:
       - type: email
         to: "noehbernasol0@gmail.com,kenn.nacario12@gmail.com"
 
+  - name: Mizara API
+    url: "https://mizara.06222001.xyz"
+    <<: *service_queue_preset
+
   - name: BCBP API (Prod)
     url: "https://app.bcbp-members-portal.xyz"
     <<: *service_queue_preset
