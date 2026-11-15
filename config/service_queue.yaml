@@ -62,6 +62,12 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
+  - name: Franz's Terraria Server
+    url: "udp://06222001.xyz:49989"
+    <<: *service_queue_preset
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: Sean's Minecraft Server
     url: "udp://06222001.xyz:32019"
     <<: *service_queue_preset
